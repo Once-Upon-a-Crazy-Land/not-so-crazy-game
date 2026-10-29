@@ -1,0 +1,90 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://Player/Idle 1.png" type="Texture" id=1]
+[ext_resource path="res://Player.gd" type="Script" id=2]
+[ext_resource path="res://Player/Idle 2.png" type="Texture" id=3]
+[ext_resource path="res://Player/Idle 3.png" type="Texture" id=4]
+[ext_resource path="res://Player/Run 4.png" type="Texture" id=5]
+[ext_resource path="res://Player/Run 2.png" type="Texture" id=6]
+[ext_resource path="res://Player/Run 3.png" type="Texture" id=7]
+[ext_resource path="res://Player/Run 1.png" type="Texture" id=8]
+[ext_resource path="res://Player/Jump 1.png" type="Texture" id=9]
+[ext_resource path="res://Player/Duck 1.png" type="Texture" id=10]
+[ext_resource path="res://Player/Climb 1.png" type="Texture" id=11]
+[ext_resource path="res://Player/Climb 2.png" type="Texture" id=12]
+[ext_resource path="res://Sounds/boing_5.mp3" type="AudioStream" id=13]
+[ext_resource path="res://Sounds/crash_1.mp3" type="AudioStream" id=14]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "Air",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 11 ), ExtResource( 12 ) ],
+"loop": true,
+"name": "Climb",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 10 ) ],
+"loop": true,
+"name": "Crowch",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 1 ), ExtResource( 3 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 8 ), ExtResource( 5 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "Walk",
+"speed": 5.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=3]
+radius = 7.0
+height = 0.0
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 6.5, 1 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 3, 8 )
+
+[node name="Player" type="KinematicBody2D"]
+script = ExtResource( 2 )
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 2 )
+animation = "Idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 2 )
+rotation = 1.5708
+shape = SubResource( 3 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2( 0.5, 8 )
+shape = SubResource( 4 )
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="SoundJump" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 13 )
+
+[node name="SoundHit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 14 )
+
+[node name="Ladder Checker" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladder Checker"]
+position = Vector2( 0, 1 )
+shape = SubResource( 5 )
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="body_entered" from="Ladder Checker" to="." method="_on_Ladder_Checker_body_entered"]
+[connection signal="body_exited" from="Ladder Checker" to="." method="_on_Ladder_Checker_body_exited"]

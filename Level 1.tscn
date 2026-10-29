@@ -1,0 +1,468 @@
+[gd_scene load_steps=40 format=2]
+
+[ext_resource path="res://World.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Blocks/Block 2.png" type="Texture" id=3]
+[ext_resource path="res://Background/Background 1.png" type="Texture" id=4]
+[ext_resource path="res://Background/Clouds With No Faces.png" type="Texture" id=5]
+[ext_resource path="res://Background/Cool S.png" type="Texture" id=6]
+[ext_resource path="res://Background/SUN.png" type="Texture" id=7]
+[ext_resource path="res://Background/Clouds With Faces.png" type="Texture" id=8]
+[ext_resource path="res://Background/new shine.png" type="Texture" id=9]
+[ext_resource path="res://Blocks/Block 1.png" type="Texture" id=10]
+[ext_resource path="res://Blocks/Platform 1.png" type="Texture" id=11]
+[ext_resource path="res://Blocks/Platform 2.png" type="Texture" id=12]
+[ext_resource path="res://Candy.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Fonts/PressStart2P-Regular.ttf" type="DynamicFontData" id=14]
+[ext_resource path="res://Candies/Candy 1.png" type="Texture" id=15]
+[ext_resource path="res://HUD.gd" type="Script" id=16]
+[ext_resource path="res://Enemy.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Shineee.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Sounds/The Beginning of the Adventure_loop.wav" type="AudioStream" id=19]
+[ext_resource path="res://Blocks/Ladder 2.png" type="Texture" id=20]
+[ext_resource path="res://Blocks/Ladder 1.png" type="Texture" id=21]
+
+[sub_resource type="SpriteFrames" id=14]
+animations = [ {
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="ConvexPolygonShape2D" id=6]
+points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=8]
+points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=9]
+points = PoolVector2Array( 16, 8, 0, 8, 0, 0, 16, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=10]
+points = PoolVector2Array( 16, 16, 0, 16, 0, 8, 16, 8 )
+
+[sub_resource type="TileSet" id=7]
+0/name = "Block 2.png 0"
+0/texture = ExtResource( 3 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 16, 16 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 6 )
+0/shape_one_way = false
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 6 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+1/name = "Block 1.png 1"
+1/texture = ExtResource( 10 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 0, 0, 16, 16 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape = SubResource( 8 )
+1/shape_one_way = false
+1/shape_one_way_margin = 1.0
+1/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 8 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+1/z_index = 0
+2/name = "Platform 1.png 2"
+2/texture = ExtResource( 11 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 0, 0, 16, 16 )
+2/tile_mode = 0
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shape_offset = Vector2( 0, 0 )
+2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape = SubResource( 9 )
+2/shape_one_way = false
+2/shape_one_way_margin = 1.0
+2/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 9 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+2/z_index = 0
+3/name = "Platform 2.png 3"
+3/texture = ExtResource( 12 )
+3/tex_offset = Vector2( 0, 0 )
+3/modulate = Color( 1, 1, 1, 1 )
+3/region = Rect2( 0, 0, 16, 16 )
+3/tile_mode = 0
+3/occluder_offset = Vector2( 0, 0 )
+3/navigation_offset = Vector2( 0, 0 )
+3/shape_offset = Vector2( 0, 0 )
+3/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+3/shape = SubResource( 10 )
+3/shape_one_way = false
+3/shape_one_way_margin = 1.0
+3/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 10 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+3/z_index = 0
+
+[sub_resource type="StreamTexture" id=5]
+load_path = "res://.import/Platform 1.png-2818cdff1ec553188b475d15a833b5f0.stex"
+
+[sub_resource type="TileSet" id=1]
+0/name = "Platform 1.png 0"
+0/texture = SubResource( 5 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 16, 16 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 24, 4 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 16, 4 )
+
+[sub_resource type="RectangleShape2D" id=15]
+extents = Vector2( 8, 4 )
+
+[sub_resource type="ConvexPolygonShape2D" id=16]
+points = PoolVector2Array( 12, 16, 4, 16, 4, 0, 12, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=17]
+points = PoolVector2Array( 12, 16, 4, 16, 4, 0, 12, 0 )
+
+[sub_resource type="TileSet" id=18]
+0/name = "Ladder 1.png 0"
+0/texture = ExtResource( 21 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 16, 16 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 16 )
+0/shape_one_way = false
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 16 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+1/name = "Ladder 2.png 1"
+1/texture = ExtResource( 20 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 0, 0, 16, 16 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape = SubResource( 17 )
+1/shape_one_way = false
+1/shape_one_way_margin = 1.0
+1/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 17 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+1/z_index = 0
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 18.5, 10 )
+
+[sub_resource type="StyleBoxFlat" id=11]
+bg_color = Color( 0, 0, 0, 0.254902 )
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color( 0.419608, 0.419608, 0.419608, 1 )
+border_blend = true
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="DynamicFont" id=12]
+font_data = ExtResource( 14 )
+
+[sub_resource type="DynamicFont" id=13]
+font_data = ExtResource( 14 )
+
+[node name="Level 1" type="Node2D"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 256, 512 )
+
+[node name="Sky" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( -52, -910 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 4 )
+centered = false
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.1, 1 )
+
+[node name="Shineee" parent="ParallaxBackground/ParallaxLayer3" instance=ExtResource( 18 )]
+modulate = Color( 1, 1, 1, 0.235294 )
+position = Vector2( 10, -168 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="ParallaxBackground/ParallaxLayer3"]
+modulate = Color( 1, 1, 1, 0.184314 )
+position = Vector2( 11, -168 )
+rotation = 6.28319
+frames = SubResource( 14 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer3"]
+self_modulate = Color( 1, 0.92549, 0.141176, 1 )
+position = Vector2( -76, -252 )
+scale = Vector2( 1.382, 1.305 )
+texture = ExtResource( 7 )
+centered = false
+
+[node name="Sun" type="Sprite" parent="ParallaxBackground/ParallaxLayer3"]
+position = Vector2( -43, -216 )
+scale = Vector2( 0.217, 0.191 )
+texture = ExtResource( 6 )
+centered = false
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.2, 1 )
+motion_mirroring = Vector2( 600, 600 )
+
+[node name="Small Clouds" type="Sprite" parent="ParallaxBackground/ParallaxLayer4"]
+position = Vector2( 29, -214 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 5 )
+centered = false
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.3, 1 )
+motion_mirroring = Vector2( 600, 600 )
+
+[node name="Clouds" type="Sprite" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2( -180, -257 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 5 )
+centered = false
+
+[node name="ParallaxLayer5" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.6, 1 )
+motion_mirroring = Vector2( 600, 600 )
+
+[node name="Face Clouds" type="Sprite" parent="ParallaxBackground/ParallaxLayer5"]
+position = Vector2( 356, -75 )
+scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 8 )
+
+[node name="ParallaxLayer6" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.4, 1 )
+motion_mirroring = Vector2( 600, 600 )
+
+[node name="Small Clouds 2" type="Sprite" parent="ParallaxBackground/ParallaxLayer6"]
+position = Vector2( 383, -163 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 5 )
+centered = false
+
+[node name="TileMap" parent="." instance=ExtResource( 1 )]
+tile_set = SubResource( 7 )
+show_collision = true
+collision_layer = 2
+collision_mask = 49
+tile_data = PoolIntArray( -1048577, 1, 0, -1114112, 1, 0, -1114111, 1, 0, -1114110, 1, 0, -1114109, 1, 0, -1114108, 1, 0, -1114107, 1, 0, -1114106, 1, 0, -1114105, 1, 0, -1114104, 1, 0, -1114103, 1, 0, -1114102, 1, 0, -1114101, 1, 0, -1114100, 1, 0, -1114099, 1, 0, -1114098, 1, 0, -1114097, 1, 0, -1114096, 1, 0, -1114095, 1, 0, -1114094, 1, 0, -1114093, 1, 0, -1114092, 1, 0, -1114091, 1, 0, -1114090, 1, 0, -1114089, 1, 0, -1114088, 1, 0, -1114087, 1, 0, -1114086, 1, 0, -1114085, 1, 0, -1114084, 1, 0, -1114083, 1, 0, -1114082, 1, 0, -1114081, 1, 0, -1114080, 1, 0, -1114079, 1, 0, -1114078, 1, 0, -1114077, 1, 0, -1114076, 1, 0, -1114075, 1, 0, -1114074, 1, 0, -1114073, 1, 0, -1114072, 1, 0, -1114071, 1, 0, -1114070, 1, 0, -1114069, 1, 0, -1114068, 1, 0, -1114067, 1, 0, -1114066, 1, 0, -1114065, 1, 0, -1114064, 1, 0, -1114063, 1, 0, -1114062, 1, 0, -1114061, 1, 0, -1114060, 1, 0, -1114059, 1, 0, -1114058, 1, 0, -1114057, 1, 0, -1114056, 1, 0, -1114055, 1, 0, -1114054, 1, 0, -1114053, 1, 0, -1114052, 1, 0, -1114051, 1, 0, -1114050, 1, 0, -1114049, 1, 0, -1114048, 1, 0, -1114047, 1, 0, -1114046, 1, 0, -1114045, 1, 0, -1114044, 1, 0, -1114043, 1, 0, -1114042, 1, 0, -1114041, 1, 0, -1114040, 1, 0, -1114039, 1, 0, -1114038, 1, 0, -1114037, 1, 0, -1114036, 1, 0, -1114035, 1, 0, -1114034, 1, 0, -1114033, 1, 0, -1114032, 1, 0, -1114031, 1, 0, -1114030, 1, 0, -1114029, 1, 0, -1114028, 1, 0, -1114027, 1, 0, -1114026, 1, 0, -1114025, 1, 0, -1114024, 1, 0, -1114023, 1, 0, -1114022, 1, 0, -1114021, 1, 0, -1114020, 1, 0, -1114019, 1, 0, -1114018, 1, 0, -1114017, 1, 0, -1114016, 1, 0, -1114015, 1, 0, -1114014, 1, 0, -1114013, 1, 0, -1114012, 1, 0, -1114011, 1, 0, -1114010, 1, 0, -1114009, 1, 0, -1114008, 1, 0, -983041, 1, 0, -917505, 1, 0, -851969, 1, 0, -917474, 0, 0, -917473, 0, 0, -786433, 1, 0, -851938, 1, 0, -851937, 1, 0, -720897, 1, 0, -786409, 0, 0, -786408, 0, 0, -786402, 1, 0, -786401, 1, 0, -655361, 1, 0, -720873, 1, 0, -720872, 1, 0, -720866, 1, 0, -720865, 1, 0, -589825, 1, 0, -655337, 1, 0, -655336, 1, 0, -655330, 1, 0, -655329, 1, 0, -524289, 1, 0, -589801, 1, 0, -589800, 1, 0, -589794, 1, 0, -589793, 1, 0, -458753, 1, 0, -524265, 1, 0, -524264, 1, 0, -524258, 1, 0, -524257, 1, 0, -393217, 1, 0, -458729, 1, 0, -458728, 1, 0, -458726, 0, 0, -458725, 0, 0, -458722, 1, 0, -458721, 1, 0, -327681, 1, 0, -393203, 1, 0, -393202, 2, 0, -393193, 1, 0, -393192, 1, 0, -393190, 1, 0, -393189, 1, 0, -393186, 1, 0, -393185, 1, 0, -262145, 1, 0, -327657, 2, 0, -327654, 1, 0, -327653, 1, 0, -327650, 1, 0, -327649, 1, 0, -196609, 1, 0, -262118, 2, 0, -262117, 2, 0, -262114, 1, 0, -262113, 1, 0, -131073, 1, 0, -196585, 3, 0, -196578, 1, 0, -196577, 1, 0, -65537, 1, 0, -131072, 0, 0, -131071, 0, 0, -131070, 0, 0, -131069, 0, 0, -131068, 0, 0, -131067, 0, 0, -131066, 0, 0, -131065, 0, 0, -131064, 0, 0, -131063, 0, 0, -131062, 0, 0, -131061, 0, 0, -131060, 0, 0, -131059, 0, 0, -131058, 0, 0, -131057, 0, 0, -131056, 0, 0, -131055, 0, 0, -131054, 0, 0, -131053, 0, 0, -131052, 0, 0, -131051, 0, 0, -131050, 0, 0, -131049, 0, 0, -131048, 0, 0, -131047, 0, 0, -131046, 0, 0, -131045, 0, 0, -131044, 0, 0, -131043, 0, 0, -131042, 1, 0, -131041, 0, 0, -131040, 0, 0, -131039, 0, 0, -131038, 0, 0, -131037, 0, 0, -131036, 0, 0, -131035, 0, 0, -131034, 0, 0, -131033, 0, 0, -131029, 0, 0, -131028, 0, 0, -131027, 0, 0, -131026, 0, 0, -131025, 0, 0, -131024, 0, 0, -131023, 0, 0, -131022, 0, 0, -131021, 0, 0, -131020, 0, 0, -131019, 0, 0, -131018, 0, 0, -131017, 0, 0, -131016, 0, 0, -131015, 0, 0, -131014, 0, 0, -131013, 0, 0, -131012, 0, 0, -131011, 0, 0, -131010, 0, 0, -131009, 0, 0, -131008, 0, 0, -131007, 0, 0, -131006, 0, 0, -131005, 0, 0, -131004, 0, 0, -131003, 0, 0, -131002, 0, 0, -131001, 0, 0, -131000, 0, 0, -130999, 0, 0, -130998, 0, 0, -130997, 0, 0, -130996, 0, 0, -130995, 0, 0, -130994, 0, 0, -130993, 0, 0, -130992, 0, 0, -130991, 0, 0, -130990, 0, 0, -130989, 0, 0, -130988, 0, 0, -130987, 0, 0, -130986, 0, 0, -130985, 0, 0, -130984, 0, 0, -130983, 0, 0, -130982, 0, 0, -130981, 0, 0, -130980, 0, 0, -130979, 0, 0, -130978, 0, 0, -130977, 0, 0, -130976, 0, 0, -130975, 0, 0, -130974, 0, 0, -130973, 0, 0, -130972, 0, 0, -130971, 0, 0, -130970, 0, 0, -130969, 0, 0, -1, 1, 0, -65536, 1, 0, -65535, 1, 0, -65534, 1, 0, -65533, 1, 0, -65532, 1, 0, -65531, 1, 0, -65530, 1, 0, -65529, 1, 0, -65528, 1, 0, -65527, 1, 0, -65526, 1, 0, -65525, 1, 0, -65524, 1, 0, -65523, 1, 0, -65522, 1, 0, -65521, 1, 0, -65520, 1, 0, -65519, 1, 0, -65518, 1, 0, -65517, 1, 0, -65516, 1, 0, -65515, 1, 0, -65514, 1, 0, -65513, 1, 0, -65512, 1, 0, -65511, 1, 0, -65510, 1, 0, -65509, 1, 0, -65508, 1, 0, -65507, 1, 0, -65506, 1, 0, -65505, 1, 0, -65504, 1, 0, -65503, 1, 0, -65502, 1, 0, -65501, 1, 0, -65500, 1, 0, -65499, 1, 0, -65498, 1, 0, -65497, 1, 0, -65493, 1, 0, -65492, 1, 0, -65491, 1, 0, -65490, 1, 0, -65489, 1, 0, -65488, 1, 0, -65487, 1, 0, -65486, 1, 0, -65485, 1, 0, -65484, 1, 0, -65483, 1, 0, -65482, 1, 0, -65481, 1, 0, -65480, 1, 0, -65479, 1, 0, -65478, 1, 0, -65477, 1, 0, -65476, 1, 0, -65475, 1, 0, -65474, 1, 0, -65473, 1, 0, -65472, 1, 0, -65471, 1, 0, -65470, 1, 0, -65469, 1, 0, -65468, 1, 0, -65467, 1, 0, -65466, 1, 0, -65465, 1, 0, -65464, 1, 0, -65463, 1, 0, -65462, 1, 0, -65461, 1, 0, -65460, 1, 0, -65459, 1, 0, -65458, 1, 0, -65457, 1, 0, -65456, 1, 0, -65455, 1, 0, -65454, 1, 0, -65453, 1, 0, -65452, 1, 0, -65451, 1, 0, -65450, 1, 0, -65449, 1, 0, -65448, 1, 0, -65447, 1, 0, -65446, 1, 0, -65445, 1, 0, -65444, 1, 0, -65443, 1, 0, -65442, 1, 0, -65441, 1, 0, -65440, 1, 0, -65439, 1, 0, -65438, 1, 0, -65437, 1, 0, -65436, 1, 0, -65435, 1, 0, -65434, 1, 0, -65433, 1, 0 )
+
+[node name="One Way" type="TileMap" parent="."]
+tile_set = SubResource( 1 )
+cell_size = Vector2( 16, 16 )
+cell_custom_transform = Transform2D( 16, 0, 0, 16, 0, 0 )
+show_collision = true
+collision_layer = 2
+collision_mask = 49
+format = 1
+tile_data = PoolIntArray( -655332, 0, 0, -655331, 0, 0, -589799, 0, 0, -393205, 0, 0, -393204, 0, 0, -393188, 0, 0, -393187, 0, 0, -262136, 0, 0, -262135, 0, 0, -262134, 0, 0, -262115, 0, 0 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="One Way"]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="One Way/StaticBody2D"]
+position = Vector2( 152, -60 )
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="One Way/StaticBody2D"]
+position = Vector2( 469, -92 )
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="One Way/StaticBody2D"]
+position = Vector2( 472, -156 )
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="One Way/StaticBody2D"]
+position = Vector2( 488, -60 )
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="One Way/StaticBody2D"]
+position = Vector2( 192, -92 )
+shape = SubResource( 3 )
+one_way_collision = true
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="One Way/StaticBody2D"]
+position = Vector2( 408, -140 )
+shape = SubResource( 15 )
+one_way_collision = true
+
+[node name="Ladders" type="TileMap" parent="."]
+tile_set = SubResource( 18 )
+cell_size = Vector2( 16, 16 )
+cell_custom_transform = Transform2D( 16, 0, 0, 16, 0, 0 )
+show_collision = true
+collision_layer = 64
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( -393195, 1, 0, -327659, 0, 0, -262123, 0, 0, -196587, 0, 0 )
+
+[node name="Fall Zone" type="Area2D" parent="."]
+position = Vector2( 667, -16 )
+collision_layer = 4
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fall Zone"]
+position = Vector2( -2.5, 0 )
+shape = SubResource( 4 )
+
+[node name="HUD" type="CanvasLayer" parent="."]
+script = ExtResource( 16 )
+
+[node name="Panel" type="Panel" parent="HUD"]
+margin_left = 3.0
+margin_top = 6.0
+margin_right = 101.0
+margin_bottom = 46.0
+custom_styles/panel = SubResource( 11 )
+
+[node name="TextureRect" type="TextureRect" parent="HUD"]
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 45.0
+margin_bottom = 45.0
+texture = ExtResource( 15 )
+expand = true
+
+[node name="x" type="Label" parent="HUD"]
+margin_left = 48.0
+margin_top = 17.0
+margin_right = 88.0
+margin_bottom = 33.0
+custom_fonts/font = SubResource( 12 )
+text = "x"
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Coins" type="Label" parent="HUD"]
+margin_left = 66.0
+margin_top = 17.0
+margin_right = 114.0
+margin_bottom = 33.0
+custom_fonts/font = SubResource( 13 )
+text = "## "
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="Enemy 1" parent="Enemies" instance=ExtResource( 17 )]
+position = Vector2( 251, -43 )
+
+[node name="Enemy 3" parent="Enemies" instance=ExtResource( 17 )]
+position = Vector2( 434, -123 )
+
+[node name="Enemy 2" parent="Enemies" instance=ExtResource( 17 )]
+position = Vector2( 171, -43 )
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 73, -44 )
+collision_mask = 31
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Camera2D2" type="Camera2D" parent="Player"]
+current = true
+zoom = Vector2( 0.4, 0.4 )
+limit_left = 0
+limit_top = -250
+limit_bottom = 0
+limit_smoothed = true
+drag_margin_h_enabled = true
+drag_margin_top = 0.3
+drag_margin_right = 0.3
+editor_draw_limits = true
+
+[node name="Candies" type="Node2D" parent="."]
+
+[node name="Candy 1" parent="Candies" instance=ExtResource( 13 )]
+position = Vector2( 192, -104 )
+
+[node name="Candy 4" parent="Candies" instance=ExtResource( 13 )]
+position = Vector2( 384, -199 )
+
+[node name="Candy 2" parent="Candies" instance=ExtResource( 13 )]
+position = Vector2( 376, -49 )
+
+[node name="Candy 3" parent="Candies" instance=ExtResource( 13 )]
+position = Vector2( 152, -72 )
+
+[node name="MusicLevel" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 19 )
+volume_db = -20.0
+autoplay = true
+
+[connection signal="body_entered" from="Fall Zone" to="Player" method="_on_Fall_Zone_body_entered"]
+[connection signal="candy_collected" from="Candies/Candy 1" to="HUD" method="_on_Candy_1_candy_collected"]
+[connection signal="candy_collected" from="Candies/Candy 4" to="HUD" method="_on_Candy_1_candy_collected"]
+[connection signal="candy_collected" from="Candies/Candy 2" to="HUD" method="_on_Candy_1_candy_collected"]
+[connection signal="candy_collected" from="Candies/Candy 3" to="HUD" method="_on_Candy_1_candy_collected"]

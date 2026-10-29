@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/honk_1.mp3-22f44cf010f3612d27e6e411e1d06a6a.mp3str"
+
+[deps]
+
+source_file="res://Sounds/honk_1.mp3"
+dest_files=[ "res://.import/honk_1.mp3-22f44cf010f3612d27e6e411e1d06a6a.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

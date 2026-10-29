@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/anvil_honk.mp3-4380e391ca2fea0b7ef32903f45dcea9.mp3str"
+
+[deps]
+
+source_file="res://Sounds/anvil_honk.mp3"
+dest_files=[ "res://.import/anvil_honk.mp3-4380e391ca2fea0b7ef32903f45dcea9.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

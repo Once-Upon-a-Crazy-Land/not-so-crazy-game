@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/foghorn_BO.mp3-c4f0248e4ca49198e824a11cc6b8fbaf.mp3str"
+
+[deps]
+
+source_file="res://Sounds/foghorn_BO.mp3"
+dest_files=[ "res://.import/foghorn_BO.mp3-c4f0248e4ca49198e824a11cc6b8fbaf.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0
